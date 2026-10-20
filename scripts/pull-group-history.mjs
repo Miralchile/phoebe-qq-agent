@@ -1,0 +1,11 @@
+import { getConfig } from '../src/config.js';
+import { OneBotClient } from '../src/onebot.js';
+import { pullGroupHistory } from '../src/history-source.js';
+const args = Object.fromEntries(process.argv.slice(2).map(arg => arg.split('=')));
+if (Object.keys(args).some(k => !['group', 'days', 'count'].includes(k))) throw new Error('用法：node scripts/pull-group-history.mjs group=群号 days=7 count=1000');
+const cfg = getConfig().snowluma;
+const onebot = new OneBotClient({ wsUrl: cfg.wsUrl, httpUrl: cfg.httpUrl, accessToken: cfg.accessToken, httpToken: cfg.httpAccessToken });
+onebot.selfInfo = await onebot.call('get_login_info');
+const result = await pullGroupHistory({ onebot, groupId: args.group, days: Number(args.days ?? 7), count: Number(args.count ?? 1000) });
+console.log(JSON.stringify(result));
+if (result.error) process.exitCode = 1;

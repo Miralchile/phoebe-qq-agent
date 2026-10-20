@@ -1,0 +1,6 @@
+{
+  "id": "offline-study-local", "name": "离线补课（本地群聊版）", "version": "1.0.0", "apiVersion": 1,
+  "entry": "index.js", "enabledByDefault": true, "permissions": [],
+  "description": "每次启动后各白名单群首次唤醒时，补看最近100条可取得的群消息，仅作已读背景，不自动补发旧回复。",
+  "settings": {}
+}

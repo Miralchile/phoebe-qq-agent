@@ -1,0 +1,97 @@
+{
+  "api": {
+    "baseUrl": "http://127.0.0.1:8645/v1",
+    "apiKey": "",
+    "model": "grok-4.6",
+    "vision": true,
+    "video": false,
+    "timeoutMs": 90000,
+    "maxRounds": 4,
+    "maxOutputTokens": 1024,
+    "thinkingEffort": "low"
+  },
+  "server": {
+    "host": "127.0.0.1",
+    "port": 3210,
+    "token": ""
+  },
+  "snowluma": {
+    "httpUrl": "http://127.0.0.1:3000",
+    "wsUrl": "ws://127.0.0.1:3001",
+    "accessToken": "",
+    "httpAccessToken": ""
+  },
+  "allow": {
+    "groups": [
+      "20001",
+      "20002",
+      "20003",
+      "20004"
+    ],
+    "private": [
+      "10001",
+      "10002"
+    ]
+  },
+  "allowAllWhenEmpty": false,
+  "persona": {
+    "botName": "菲比",
+    "roleText": "你是菲比啾比，一只呆萌、调皮、贪吃的虚构群聊角色。说话简短自然，偶尔使用菲比、啾比和菲八等口癖。知识性问题保持准确，不虚构记忆或工具执行结果。",
+    "customRules": "根据多人上下文回复；不要逐条补答旧消息，不输出工具过程。"
+  },
+  "chatActive": {
+    "enabled": false
+  },
+  "sticker": {
+    "enabled": false
+  },
+  "phoebe": {
+    "enabled": true,
+    "adminIds": [
+      "10001",
+      "10002"
+    ],
+    "groups": {
+      "20001": {
+        "random_probability": 0.6,
+        "keyword_probability": 0.8,
+        "recent_keyword_probability": 0.8,
+        "cooldown_seconds": 120,
+        "parser_enabled": 1
+      },
+      "20002": {
+        "random_probability": 0.6,
+        "keyword_probability": 0.8,
+        "recent_keyword_probability": 0.8,
+        "cooldown_seconds": 120,
+        "parser_enabled": 1
+      },
+      "20003": {
+        "random_probability": 0.6,
+        "keyword_probability": 0.8,
+        "recent_keyword_probability": 0.8,
+        "cooldown_seconds": 120,
+        "parser_enabled": 1
+      },
+      "20004": {
+        "random_probability": 0.6,
+        "keyword_probability": 0.8,
+        "recent_keyword_probability": 0.8,
+        "cooldown_seconds": 120,
+        "parser_enabled": 1
+      }
+    },
+    "imageCache": "test/fixtures/images",
+    "parserSettings": "data/parser-settings.json",
+    "styleModes": {},
+    "sticker_probability": 0.8,
+    "groupStickers": {
+      "enabled": true
+    }
+  },
+  "skills": {
+    "offline-study-local": {
+      "enabled": false
+    }
+  }
+}
